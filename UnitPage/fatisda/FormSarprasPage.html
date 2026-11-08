@@ -1,0 +1,2084 @@
+<!doctype html>
+<html lang="id" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>eService UNS - Form Layanan Peminjaman Sarpras - Fakultas Teknologi Informasi dan Sains Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
+
+
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="eService">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <meta name="csrf-token" content="HUmhzEOtdzFKCLqPLMD4cDS7SGcn6U3upvZEhoac">
+    <meta name="vapid-key"
+        content="BFzmDXcJ7Jg2qQyX1Y_LWh45AJCZkcIpiJJQSTRtiIXM5EgqCegHHRZQBKhtcMIk7PmefdUPk0e1l9DtMw3rH_I">
+    <meta name="push-subscribe-url" content="https://eservice.uns.ac.id/id/site/push-subscription">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://eservice.uns.ac.id/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://eservice.uns.ac.id/assets/js/layout.js"></script>
+
+    <link href="https://eservice.uns.ac.id/assets/css/bootstrap.min.css?v=3" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/libs/datetimepicker/jquery.datetimepicker.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/deliver/select2.min.css" rel="stylesheet" />
+    <link href="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/css/fileinput.min.css" media="all"
+        rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/deliver/icons-1.5.0/font/bootstrap-icons.css" media="all"
+        rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/libs/bootstrap-datepicker/bootstrap-datepicker.standalone.min.css"
+        media="all" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/libs/nprogress/nprogress.min.css" media="all" rel="stylesheet"
+        type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/css/app.min.css?v=6" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/css/custom.min.css?v=3" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/assets/css/custom.css?v=3" rel="stylesheet">
+
+    <link href="https://eservice.uns.ac.id/statics/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/statics/css/app.css" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/statics/css/custom.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://eservice.uns.ac.id/statics/css/site.css?v=4" rel="stylesheet" type="text/css" />
+    <link href="https://eservice.uns.ac.id/statics/css/rekomendasi.css?v=1" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="layout-wrapper landing" id="pjax-container-site">
+        <div class="fixed-top">
+            <nav class="navbar navbar-light navbar-info" style="background-color: #4a98be;">
+                <div class="container align-items-center d-flex">
+                    <div class="flex-grow-1 d-none d-md-flex align-items-center gap-2">
+                        <i class="bi bi-megaphone-fill" aria-hidden="true"></i>
+                        <strong>Informasi Jam Layanan ULT — Layanan Tatap Muka: 08.00–15.00 | Contact Center:
+                            08.00–17.00</strong>
+                    </div>
+                    <div class="flex-shrink-0 ms-auto">
+                        <div class="hstack gap-3">
+                            <a href="https://uns.ac.id" class="d-none d-sm-block">Situs Utama</a>
+                            <div class="vr d-none d-sm-block"></div>
+                            <a href="https://eservice.uns.ac.id/en/site" class="d-none d-sm-block">🇬🇧 English</a>
+                            <div class="vr d-none d-sm-block"></div>
+                            <a href="javascript:void();"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <div class="vr"></div>
+                            <span>Masuk sebagai <strong>Mahasiswa</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="navbar navbar-expand-lg navbar-landing navbar-light is-sticky"
+                style="box-shadow: 0 1px 5px -2px rgba(56, 65, 74, 0.15); background-color:#fff; color:#000"
+                id="navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="https://eservice.uns.ac.id/id/site">
+                        <img src="https://eservice.uns.ac.id/assets/images/logo-dark.png" class="card-logo" alt="logo"
+                            height="34">
+                    </a>
+                    <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site">Halaman Depan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/layanan">Layanan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/unit">Unit</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a style="color: #000" class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/unit/pengaduan">Pengaduan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/panduan">Panduan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/search">Pencarian</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: #000" data-pjax class="nav-link fs-14"
+                                    href="https://eservice.uns.ac.id/id/site/user/riwayat">Riwayat Saya</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" id="btn-aktifkan-notifikasi"
+                                    onclick="eservicePushEnable()" style="color: #000" class="nav-link fs-14">
+                                    <i class="ri-notification-3-line align-middle me-1"></i>Aktifkan Notifikasi
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="my-2 my-lg-0">
+                            <form id="logout-form" action="https://eservice.uns.ac.id/id/auth/logout" method="POST"
+                                style="display: none;">
+                                <input type="hidden" name="_token" value="HUmhzEOtdzFKCLqPLMD4cDS7SGcn6U3upvZEhoac"
+                                    autocomplete="off">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <section class="section bg-light pt-0" id="unit-index">
+            <div class="container skip-top">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mx-n4">
+                            <div class="bg-soft-info" style="background-color: rgb(255, 255, 255) !important;">
+                                <div class="card-body pb-0 px-4">
+                                    <div class="row mb-3">
+                                        <div class="col-md">
+                                            <div class="row g-3">
+                                                <div class="col-md-auto">
+                                                    <div class="avatar-md">
+                                                        <div class="avatar-title bg-light rounded">
+                                                            <img src="https://eservice.uns.ac.id/assets/images/logo-uns.png"
+                                                                alt="" class="avatar-md rounded">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md">
+                                                    <div>
+                                                        <h4 class="fw-bold">Fakultas Teknologi Informasi dan Sains Data
+                                                        </h4>
+                                                        <div class="hstack gap-3 flex-wrap">
+                                                            <div>
+                                                                <i class="ri-building-line align-bottom me-1"></i>
+                                                                Universitas Sebelas Maret
+                                                            </div>
+                                                            <div>
+                                                                <i class="ri-bar-chart-2-line align-bottom me-1"></i>
+                                                                <span class="fw-semibold">4</span>
+                                                                Layanan
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <div class="hstack gap-1 flex-wrap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="hstack gap-2 mb-3">
+                            <a href="https://eservice.uns.ac.id/id/site/unit/94-layanan-peminjaman-sarpras-fd35978a/informasi-layanan"
+                                class="btn btn-secondary">Detail Layanan</a>
+                            <a href="https://eservice.uns.ac.id/id/site/unit?id=1583" class="btn btn-info">Lihat Semua
+                                Layanan</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="flex-shrink-0 me-1">
+                                        <i class="ri-honour-line fs-24 align-middle text-success me-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-0 fw-semibold">Layanan</h5>
+                                    </div>
+                                </div>
+                                <style>
+                                    .overlay-label-tidak-tersedia {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        background-color: #f06548;
+                                        color: white;
+                                        font-size: 10px;
+                                        padding: 3px 8px;
+                                        border-bottom-left-radius: 8px;
+                                        font-weight: 600;
+                                        z-index: 10;
+                                    }
+                                </style>
+
+                                <div class="card shadow-sm position-relative">
+
+
+                                    <div class="card-body d-flex flex-column justify-content-between">
+
+                                        <div class="d-flex">
+                                            <div class="avatar-sm icon-effect">
+                                                <div class="avatar-title bg-transparent rounded-circle text-success">
+                                                    <i class="ri-service-fill fs-36"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="ms-3 flex-grow-1">
+                                                <h5 class="card-title">Layanan Peminjaman Sarpras</h5>
+
+
+                                                <h6 class="text-primary mb-1">
+                                                    Fakultas Teknologi Informasi dan Sains Data
+                                                </h6>
+
+
+                                                <p class="company-name text-muted mb-0">Pelayanan Sarana Prasarana</p>
+
+                                                <a data-pjax
+                                                    href="https://eservice.uns.ac.id/id/site/unit/94-layanan-peminjaman-sarpras-fd35978a/informasi-layanan"
+                                                    class="stretched-link"></a>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="flex-shrink-0 me-1">
+                                        <i class="ri-pencil-ruler-2-line fs-24 align-middle text-success me-1"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-0 fw-semibold">Form Permintaan</h5>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="card-title mb-0 flex-grow-1">Permohonan</h5>
+                                        </div>
+                                    </div>
+                                    <form action="https://eservice.uns.ac.id/id/site/unit/94/form-layanan-simpan"
+                                        method="POST" enctype="multipart/form-data">
+                                        <div class="card-body">
+                                            <input type="hidden" name="_token"
+                                                value="HUmhzEOtdzFKCLqPLMD4cDS7SGcn6U3upvZEhoac" autocomplete="off">
+                                            <div class="form-group mb-3">
+                                                <label for="title">
+                                                    Judul <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" name="title" id="title" class="form-control" value=""
+                                                    required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="description">
+                                                    Deskripsi <span class="text-danger">*</span>
+                                                </label>
+                                                <textarea name="description" id="description" rows="4"
+                                                    class="form-control" required></textarea>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="unsFormId-GhwB170v">Nama Pemohon <span
+                                                        class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" name="nama_pemohon" id="unsFormId-GhwB170v"
+                                                    class="form-control" value="" required>
+                                                <div class="form-text">
+                                                    Nama penanggung jawab
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="unsFormId-63Rsawge">NIM <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" name="nim" id="unsFormId-63Rsawge"
+                                                    class="form-control" value="" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="unsFormId-jGIyxIz3">Program Studi <span
+                                                        class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" name="program_studi" id="unsFormId-jGIyxIz3"
+                                                    class="form-control" value="" required>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="unsFormId-5MeiEpIO">Jenis Kegiatan <span
+                                                        class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" name="jenis_kegiatan" id="unsFormId-5MeiEpIO"
+                                                    class="form-control" value="" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="unsFormId-Syc4igHk">Surat Izin Kegiatan <span
+                                                        class="text-danger">*</span>
+                                                </label>
+                                                <input type="file" accept=".pdf" name="surat_izin_kegiatan"
+                                                    id="unsFormId-Syc4igHk" class="form-control" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-success btn-submit">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="svg-divider-footer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path opacity=".25" class="shape-fill-footer"
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z">
+                </path>
+                <path opacity=".5" class="shape-fill-footer"
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z">
+                </path>
+                <path class="shape-fill-footer"
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z">
+                </path>
+            </svg>
+        </section>
+        <footer class="custom-footer bg-dark py-0 py-lg-5 position-relative"
+            style="background-color: #1a1a1a !important; border-right: 1px solid #1a1a1a !important;">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-4 mt-4" data-lp-reveal style="--lp-i: 0">
+                        <div>
+                            <div>
+                                <img src="https://eservice.uns.ac.id/assets/images/logo-light.png" alt="logo light"
+                                    height="32">
+                            </div>
+                            <div class="mt-4">
+                                <p>Jalan Ir. Sutami 36 Kentingan, Jebres, Surakarta, Jawa Tengah. Indonesia 57126.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 ms-lg-auto">
+                        <div class="row">
+                            <div class="col-sm-4 mt-4" data-lp-reveal style="--lp-i: 1">
+                                <h5 class="text-white mb-0">Universitas</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled footer-list fs-14">
+                                        <li><a href="https://uns.ac.id/id/tentang-uns/profil-universitas">Tentang</a>
+                                        </li>
+                                        <li><a href="https://uns.ac.id/id/uns-events">Agenda</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4" data-lp-reveal style="--lp-i: 2">
+                                <h5 class="text-white mb-0">Layanan Sistem</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled footer-list fs-14">
+                                        <li><a href="https://ocw.uns.ac.id/">Open Course Ware (OCW)</a></li>
+                                        <li><a href="https://siakad.uns.ac.id/">Sistem Akademik</a></li>
+                                        <li><a href="https://kantorhukum.uns.ac.id/">Kantor Hukum</a></li>
+                                        <li><a href="https://sipsmart.uns.ac.id/">Prestasi Mahasiswa</a></li>
+                                        <li><a href="https://digilib.uns.ac.id/">Digital Library</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4" data-lp-reveal style="--lp-i: 3">
+                                <h5 class="text-white mb-0">Portal Informasi</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled footer-list fs-14">
+                                        <li><a href="/">FAQ</a></li>
+                                        <li><a href="/">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center text-sm-start align-items-center mt-5" data-lp-reveal style="--lp-i: 1">
+                    <div class="col-sm-6">
+
+                        <div>
+                            <p class="copy-rights mb-0">
+                                2026 © Universitas Sebelas Maret <br> UPT. Teknologi Informasi dan
+                                Komunikasi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end mt-3 mt-sm-0">
+                            <ul class="list-inline mb-0 footer-social-link">
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-facebook-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-github-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-linkedin-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-google-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-dribbble-line"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+    </div>
+    <div id="eservice-chat-widget-wrapper" class="eservice-chat-widget">
+
+        <button id="eservice-chat-launcher" type="button" class="chat-launcher-btn shadow-lg"
+            aria-label="Buka Live Chat eService">
+            <span class="launcher-icon-open d-flex align-items-center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="me-1">
+                    <path
+                        d="M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v4c0 1.1.9 2 2 2h1v-6.1c.59-.34 1-.98 1-1.72 0-3.87 3.13-7 7-7s7 3.13 7 7c0 .74.41 1.38 1 1.72V20h3c1.1 0 2-.9 2-2v-4c0-.74-.4-1.38-1-1.78zM7 14c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1zm10 0c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1z" />
+                </svg>
+            </span>
+            <span class="launcher-icon-close d-none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </span>
+            <span class="launcher-label d-none d-md-inline-block fw-semibold ms-1 me-1">Chat Bantuan</span>
+            <span class="badge bg-success rounded-circle p-1 online-pulse" title="Layanan Aktif"></span>
+        </button>
+
+
+        <div id="eservice-chat-window" class="chat-window d-none card shadow-lg border-0">
+
+            <div class="chat-header p-3 text-white d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="avatar-sm bg-white rounded d-flex align-items-center justify-content-center shadow-sm"
+                        style="width: 38px; height: 38px; min-width: 38px; color: #4a98be;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h6 class="mb-0 text-white fw-bold fs-14">Live Chat eService UNS</h6>
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="status-indicator-dot bg-success rounded-circle"
+                                style="width: 7px; height: 7px; display: inline-block;"></span>
+                            <small class="text-white-50 fs-11" id="chat-header-status">Assistant Aktif &bull; CS
+                                Standby</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-1">
+                    <button type="button" id="btn-reset-chat" class="btn btn-sm text-white p-1 hover-opacity"
+                        onclick="resetChatSession(event)" title="Mulai Sesi Baru / Hapus Riwayat"
+                        style="cursor: pointer; position: relative; z-index: 10;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                            style="pointer-events: none;">
+                            <path
+                                d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-sm text-white p-1 hover-opacity" id="btn-minimize-chat"
+                        title="Tutup Chat" style="cursor: pointer; position: relative; z-index: 10;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" style="pointer-events: none;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+            <div
+                class="chat-info-bar py-1 px-3 bg-light border-bottom d-flex justify-content-between align-items-center text-muted fs-11">
+                <span id="chat-operating-hours"><i class="mdi mdi-clock-outline me-1"></i>Jam CS: <span
+                        id="chat-operating-hours-text">Senin, Selasa, Rabu, Kamis, Jumat (08:00 - 15:00
+                        WIB)</span></span>
+            </div>
+
+
+            <div id="chat-preform-section" class="chat-body-section p-4 d-none">
+                <div class="text-center mb-3">
+                    <div class="avatar-md bg-light rounded mx-auto mb-2 d-flex align-items-center justify-content-center text-primary"
+                        style="width: 50px; height: 50px; color: #4a98be !important;">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
+                        </svg>
+                    </div>
+                    <h6 class="fw-bold mb-1">Selamat Datang di eService UNS</h6>
+                    <p class="text-muted fs-12 mb-0">Silakan isi informasi singkat berikut untuk memulai percakapan
+                        dengan Assistant dan tim pendukung kami.</p>
+                </div>
+
+                <p class="text-center text-muted fs-11 mb-2">Sudah punya akun UNS? Masuk agar riwayat & data Anda
+                    otomatis terisi.</p>
+                <a href="https://eservice.uns.ac.id/sso/redirect"
+                    class="btn btn-outline-primary w-100 py-2 fs-13 fw-semibold mb-2"
+                    style="border-color: #4a98be; color: #4a98be;">
+                    <i class="mdi mdi-shield-account-outline me-1"></i>Masuk dengan SSO UNS
+                </a>
+                <a href="https://eservice.uns.ac.id/id/auth/google"
+                    class="btn btn-outline-secondary w-100 py-2 fs-13 fw-semibold">
+                    <i class="mdi mdi-google me-1"></i>Masuk dengan Google
+                </a>
+
+                <div class="d-flex align-items-center my-3">
+                    <hr class="flex-grow-1">
+                    <span class="mx-2 text-muted fs-11">atau</span>
+                    <hr class="flex-grow-1">
+                </div>
+
+                <form id="form-prechat-guest" onsubmit="handleStartChat(event)">
+                    <div class="mb-3">
+                        <label class="form-label fs-12 fw-semibold text-dark mb-1">Nama Lengkap <span
+                                class="text-danger">*</span></label>
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-light"><i class="mdi mdi-account-outline"></i></span>
+                            <input type="text" id="prechat-name" class="form-control" placeholder="Contoh: Budi Santoso"
+                                value="Nabil Rizki Wardana" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fs-12 fw-semibold text-dark mb-1">Alamat Email <span
+                                class="text-danger">*</span></label>
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-light"><i class="mdi mdi-email-outline"></i></span>
+                            <input type="email" id="prechat-email" class="form-control"
+                                placeholder="nama@student.uns.ac.id" value="nwardana@student.uns.ac.id" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fs-12 fw-semibold text-dark mb-1">Nomor WhatsApp / HP <span
+                                class="text-danger">*</span></label>
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-text bg-light"><i class="mdi mdi-whatsapp"></i></span>
+                            <input type="tel" id="prechat-phone" class="form-control" placeholder="08xxxxxxxxxx"
+                                value="" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fs-13 fw-semibold shadow-sm"
+                        style="background-color: #4a98be; border-color: #4a98be;">
+                        Mulai Percakapan
+                    </button>
+                    <div class="text-center mt-2">
+                        <small class="text-muted fs-11"><i class="mdi mdi-shield-check text-success me-1"></i>Data Anda
+                            aman dan terlindungi.</small>
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="chat-conversation-section" class="chat-body-section ">
+
+                <div id="chat-messages-container" class="chat-messages-box p-3">
+                    <div class="text-center my-2">
+                        <span class="badge bg-light text-muted border px-2 py-1 fs-11">Hari Ini</span>
+                    </div>
+
+
+                    <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+                        <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z" />
+                            </svg>
+                        </div>
+                        <div class="chat-bubble-wrapper">
+                            <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                                <p class="mb-1 fw-medium">Halo <span id="display-user-name" class="fw-bold">Nabil Rizki
+                                        Wardana</span>!</p>
+                                <p class="mb-0">Saya <strong>Asisten Virtual eService UNS</strong>. Ada yang bisa saya
+                                    bantu terkait informasi layanan, prosedur tiket helpdesk, atau unit kerja di
+                                    Universitas Sebelas Maret?</p>
+                            </div>
+                            <small class="text-muted fs-10 mt-1 d-block">Baru saja &bull; Assistant</small>
+                        </div>
+                    </div>
+
+
+                    <div id="chat-quick-suggestions" class="mb-3 ps-4 ms-2">
+                        <small class="text-muted fs-11 d-block mb-1 fw-semibold">Topik Populer:</small>
+                        <div class="d-flex flex-wrap gap-1">
+                            <button type="button"
+                                class="btn btn-outline-secondary btn-sm py-1 px-2 fs-11 rounded-pill bg-white"
+                                onclick="sendQuickPrompt('Bagaimana cara reset password akun SSO UNS?')">
+                                Reset Password SSO
+                            </button>
+                            <button type="button"
+                                class="btn btn-outline-secondary btn-sm py-1 px-2 fs-11 rounded-pill bg-white"
+                                onclick="sendQuickPrompt('Bagaimana cara pengajuan hosting atau domain website unit?')">
+                                Domain & Hosting Unit
+                            </button>
+                            <button type="button"
+                                class="btn btn-outline-secondary btn-sm py-1 px-2 fs-11 rounded-pill bg-white"
+                                onclick="sendQuickPrompt('Layanan pengaduan jaringan internet & WiFi kampus')">
+                                Kendala WiFi Kampus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="chat-queue-banner"
+                    class="alert alert-warning border-0 rounded-0 py-2 px-3 mb-0 d-none flex-shrink-0">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="spinner-grow spinner-grow-sm text-warning" role="status"></div>
+                            <div>
+                                <strong class="fs-12 d-block text-dark">Menghubungkan ke Customer Service</strong>
+                                <small class="text-muted fs-11">Antrean Anda: <strong class="text-primary">#02</strong>
+                                    &bull; Estimasi: ~2 mnt</small>
+                            </div>
+                        </div>
+                        <span class="badge bg-warning text-dark fs-10">Menghubungkan</span>
+                    </div>
+                </div>
+
+
+                <div class="chat-footer p-2 bg-white border-top flex-shrink-0">
+                    <form id="chat-input-form" onsubmit="handleSendUserMessage(event)"
+                        class="d-flex align-items-center gap-2 mb-0">
+                        <input type="text" id="chat-message-input"
+                            class="form-control form-control-sm border-light-subtle"
+                            placeholder="Ketik pertanyaan Anda..." autocomplete="off" required>
+                        <button type="submit" id="chat-send-btn"
+                            class="btn btn-sm text-white px-3 d-flex align-items-center justify-content-center"
+                            style="background-color: #4a98be; border-color: #4a98be; height: 32px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="d-flex justify-content-between align-items-center px-1 mt-1">
+                        <small class="text-muted fs-10"><i class="mdi mdi-information-outline me-1"></i>Asisten
+                            merespons otomatis & dapat mengalihkan ke staf CS jika diperlukan.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Floating Widget Styles */
+        .eservice-chat-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99999;
+            font-family: inherit;
+        }
+
+        .chat-launcher-btn {
+            background-color: #4a98be;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            /* Clean rectangular aesthetic matching request */
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(74, 152, 190, 0.4);
+            transition: all 0.25s ease;
+        }
+
+        .chat-launcher-btn:hover {
+            background-color: #3b82a6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 152, 190, 0.5);
+        }
+
+        .online-pulse {
+            width: 8px;
+            height: 8px;
+            margin-left: 6px;
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+            animation: pulse-green 1.8s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(40, 167, 69, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+            }
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 80px;
+            right: 24px;
+            width: 380px;
+            max-width: calc(100vw - 32px);
+            height: 560px;
+            max-height: calc(100vh - 100px);
+            border-radius: 10px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+            animation: chat-slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            z-index: 100000;
+        }
+
+        @keyframes chat-slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eservice-chat-fullpage .chat-window-fullpage {
+            height: calc(100vh - 220px);
+            min-height: 480px;
+            border-radius: 10px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-window-fullpage .chat-bubble-bot,
+        .chat-window-fullpage .chat-bubble-user,
+        .chat-window-fullpage .chat-bubble-cs {
+            max-width: min(640px, 80vw);
+        }
+
+        .chat-header {
+            flex: 0 0 auto;
+            background: #4a98be;
+        }
+
+        .chat-info-bar {
+            flex: 0 0 auto;
+        }
+
+        .chat-body-section {
+            flex: 1 1 0%;
+            min-height: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #chat-preform-section {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .chat-messages-box {
+            flex: 1 1 0%;
+            min-height: 0;
+            height: 100%;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            overscroll-behavior: contain;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Custom modern scrollbar */
+        .chat-messages-box::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages-box::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .chat-messages-box::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .chat-messages-box::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .chat-footer {
+            flex: 0 0 auto;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .chat-bubble-bot {
+            max-width: 290px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px 8px 8px 2px;
+        }
+
+        .chat-bubble-user {
+            max-width: 290px;
+            background: #4a98be;
+            color: #ffffff;
+            border-radius: 8px 8px 2px 8px;
+        }
+
+        .chat-bubble-cs {
+            max-width: 290px;
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            color: #1e1b4b;
+            border-radius: 8px 8px 8px 2px;
+        }
+
+        .recommendation-card {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-left: 3px solid #4a98be;
+            border-radius: 6px;
+            transition: transform 0.15s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .hover-opacity:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+    <script>
+        const CHAT_STORAGE_KEY = 'eservice_live_chat_session_8013';
+        let clientChatHistory = [];
+        let isChatEscalated = false;
+        let chatSessionStatus = 'bot';
+        let chatSessionToken = null;
+        let lastPollMessageId = 0;
+        let widgetPollTimer = null;
+
+        function getStoredSession() {
+            try {
+                const raw = localStorage.getItem(CHAT_STORAGE_KEY) || sessionStorage.getItem(CHAT_STORAGE_KEY);
+                const saved = raw ? JSON.parse(raw) : null;
+                if (saved && saved.identityVersion !== 2) {
+                    // Old cached HTML/header can contain staff names. Retain the token and reload safe server output.
+                    saved.messagesHtml = null;
+                    saved.headerStatus = null;
+                    saved.lastPollMessageId = 0;
+                    saved.identityVersion = 2;
+                    localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(saved));
+                    sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(saved));
+                }
+                return saved;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function updateStoredSession(patch) {
+            try {
+                const current = getStoredSession() || {};
+                const updated = Object.assign({}, current, patch);
+                localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(updated));
+                sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(updated));
+            } catch (e) { }
+        }
+
+        function persistChatState() {
+            const container = document.getElementById('chat-messages-container');
+            const headerStatus = document.getElementById('chat-header-status');
+            const queueBanner = document.getElementById('chat-queue-banner');
+            if (container) {
+                updateStoredSession({
+                    user: {
+                        name: "Nabil Rizki Wardana",
+                        email: "nwardana@student.uns.ac.id",
+                        phone: ""
+                    },
+                    messagesHtml: container.innerHTML,
+                    headerStatus: headerStatus ? headerStatus.textContent : null,
+                    isQueueVisible: queueBanner ? !queueBanner.classList.contains('d-none') : false,
+                    chatHistory: clientChatHistory,
+                    isChatEscalated: isChatEscalated,
+                    chatSessionStatus: chatSessionStatus,
+                    sessionToken: chatSessionToken,
+                    lastPollMessageId: lastPollMessageId
+                });
+            }
+        }
+
+        async function resetChatSession(e) {
+            if (e && e.preventDefault) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            let confirmMsg = 'Mulai sesi percakapan baru? Riwayat obrolan di browser ini akan dibersihkan.';
+            const isConnectingOrActive = isChatEscalated || (typeof chatSessionStatus !== 'undefined' && (chatSessionStatus === 'active' || chatSessionStatus === 'queued'));
+            if (isConnectingOrActive) {
+                confirmMsg = 'Anda sedang terhubung / dalam antrean Customer Service. Apakah Anda yakin ingin mengakhiri sesi percakapan ini dan memulai obrolan baru?';
+            }
+
+            if (!window.confirm(confirmMsg)) return;
+
+            // Send end-session notification to server so CS panel knows immediately
+            if (chatSessionToken) {
+                try {
+                    await fetch('https://eservice.uns.ac.id/api/live-chat/end-session', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': 'HUmhzEOtdzFKCLqPLMD4cDS7SGcn6U3upvZEhoac',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            session_token: chatSessionToken
+                        })
+                    });
+                } catch (err) {
+                    console.warn('Gagal sinkronisasi end-session ke server:', err);
+                }
+            }
+
+            // Stop polling timer
+            if (window._widgetPollTimer) {
+                clearInterval(window._widgetPollTimer);
+                window._widgetPollTimer = null;
+            }
+
+            // Clear local storage
+            try {
+                localStorage.removeItem(CHAT_STORAGE_KEY);
+                sessionStorage.removeItem(CHAT_STORAGE_KEY);
+            } catch (e) { }
+
+            // Reload page to reset widget to initial clean state
+            window.location.reload();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const launcherBtn = document.getElementById('eservice-chat-launcher');
+            const chatWindow = document.getElementById('eservice-chat-window');
+            const btnMinimize = document.getElementById('btn-minimize-chat');
+            const iconOpen = launcherBtn ? launcherBtn.querySelector('.launcher-icon-open') : null;
+            const iconClose = launcherBtn ? launcherBtn.querySelector('.launcher-icon-close') : null;
+            const isFullPage = false;
+
+            // Toggle window visibility
+            function toggleChat() {
+                if (isFullPage) return;
+                const isClosed = chatWindow.classList.contains('d-none');
+                if (isClosed) {
+                    chatWindow.classList.remove('d-none');
+                    iconOpen.classList.add('d-none');
+                    iconClose.classList.remove('d-none');
+                    scrollChatToBottom();
+                    const input = document.getElementById('chat-message-input');
+                    if (input) setTimeout(() => input.focus(), 150);
+                    updateStoredSession({ isOpen: true });
+                } else {
+                    chatWindow.classList.add('d-none');
+                    iconOpen.classList.remove('d-none');
+                    iconClose.classList.add('d-none');
+                    updateStoredSession({ isOpen: false });
+                }
+            }
+
+            if (launcherBtn) launcherBtn.addEventListener('click', toggleChat);
+            if (btnMinimize) btnMinimize.addEventListener('click', toggleChat);
+            const btnReset = document.getElementById('btn-reset-chat');
+            if (btnReset) btnReset.addEventListener('click', resetChatSession);
+
+            // Tombol "Tanya asisten" dari halaman lain (mis. rekomendasi layanan) membuka widget dengan teks terisi.
+            document.addEventListener('click', function (e) {
+                const trigger = e.target.closest('[data-open-live-chat]');
+                if (!trigger) return;
+                e.preventDefault();
+                const source = trigger.dataset.liveChatSource ? document.querySelector(trigger.dataset.liveChatSource) : null;
+                const text = ((source && source.value) || trigger.dataset.liveChatText || '').trim();
+                if (chatWindow.classList.contains('d-none')) toggleChat();
+                const input = document.getElementById('chat-message-input');
+                if (input && text) input.value = text;
+            });
+
+            // Restore previous session if user already started a chat in this browser tab / window
+            const savedSession = getStoredSession();
+            if (savedSession && (savedSession.messagesHtml || savedSession.sessionToken || savedSession.user)) {
+                // Pre-fill inputs
+                const nameInput = document.getElementById('prechat-name');
+                const emailInput = document.getElementById('prechat-email');
+                const phoneInput = document.getElementById('prechat-phone');
+                const userName = (savedSession.user && savedSession.user.name) || "Nabil Rizki Wardana";
+                const userEmail = (savedSession.user && savedSession.user.email) || "nwardana@student.uns.ac.id";
+                const userPhone = (savedSession.user && savedSession.user.phone) || "";
+
+                if (nameInput && userName) nameInput.value = userName;
+                if (emailInput && userEmail) emailInput.value = userEmail;
+                if (phoneInput && userPhone) phoneInput.value = userPhone;
+
+                // Directly show chat conversation section
+                const preform = document.getElementById('chat-preform-section');
+                const convSection = document.getElementById('chat-conversation-section');
+                if (preform) preform.classList.add('d-none');
+                if (convSection) convSection.classList.remove('d-none');
+
+                const displayName = document.getElementById('display-user-name');
+                if (displayName && userName) displayName.textContent = userName;
+
+                // Restore messages HTML if available
+                if (savedSession.messagesHtml) {
+                    const container = document.getElementById('chat-messages-container');
+                    if (container) container.innerHTML = savedSession.messagesHtml.replace(/CS Manusia/g, 'Customer Service');
+                }
+
+                // Restore conversation context for AI
+                if (savedSession.chatHistory && Array.isArray(savedSession.chatHistory)) {
+                    clientChatHistory = savedSession.chatHistory;
+                }
+
+                // Restore escalation state
+                if (typeof savedSession.isChatEscalated !== 'undefined') {
+                    isChatEscalated = !!savedSession.isChatEscalated;
+                }
+                if (savedSession.chatSessionStatus) {
+                    chatSessionStatus = savedSession.chatSessionStatus;
+                }
+
+                // Restore session token
+                if (savedSession.sessionToken) {
+                    chatSessionToken = savedSession.sessionToken;
+                }
+                if (savedSession.lastPollMessageId) {
+                    lastPollMessageId = savedSession.lastPollMessageId;
+                }
+
+                // Sinkronisasi lastPollMessageId dari elemen yang sudah ada di DOM
+                const existingMsgs = document.querySelectorAll('#chat-messages-container [data-msg-id]');
+                existingMsgs.forEach(el => {
+                    const mid = parseInt(el.getAttribute('data-msg-id'), 10);
+                    if (!isNaN(mid)) {
+                        lastPollMessageId = Math.max(lastPollMessageId, mid);
+                    }
+                });
+
+                // Restore header status
+                if (savedSession.headerStatus) {
+                    const headerStatus = document.getElementById('chat-header-status');
+                    if (headerStatus) headerStatus.textContent = savedSession.headerStatus.replace(/CS Manusia/gi, 'Customer Service');
+                }
+
+                // Restore queue banner if was queueing
+                if (savedSession.isQueueVisible) {
+                    const queueBanner = document.getElementById('chat-queue-banner');
+                    if (queueBanner) queueBanner.classList.remove('d-none');
+                }
+
+                // Re-open chat if was open before refresh
+                if (isFullPage) {
+                    scrollChatToBottom();
+                } else if (savedSession.isOpen) {
+                    chatWindow.classList.remove('d-none');
+                    iconOpen.classList.add('d-none');
+                    iconClose.classList.remove('d-none');
+                    scrollChatToBottom();
+                }
+
+                // Resume polling if escalated
+                if (isChatEscalated && chatSessionToken && savedSession.messagesHtml) {
+                    startWidgetPolling();
+                }
+            }
+
+            // Fallback sync: For logged-in users, if local storage has no messages, check server for active session
+            const isLoggedInUser = true;
+            if ((isLoggedInUser || (savedSession && savedSession.sessionToken)) && (!savedSession || !savedSession.messagesHtml || !savedSession.sessionToken)) {
+                fetch('/api/live-chat/init', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        session_token: savedSession ? savedSession.sessionToken : null,
+                        name: "Nabil Rizki Wardana",
+                        email: "nwardana@student.uns.ac.id",
+                        phone: "",
+                        user_type: 'Civitas UNS'
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        updateOperatingSchedule(data.operating_schedule);
+                        if (data.status === 'restored' && data.messages && data.messages.length > 0) {
+                            chatSessionToken = data.session_token;
+                            chatSessionStatus = data.session_status || 'bot';
+                            isChatEscalated = (data.session_status === 'queued' || data.session_status === 'active');
+                            const header = document.getElementById('chat-header-status');
+                            if (header && data.claimed_by_name) header.textContent = 'Terhubung dengan CS: ' + data.claimed_by_name;
+
+                            const container = document.getElementById('chat-messages-container');
+                            if (container) {
+                                // Discard the initial greeting or stale UI before restoring the server transcript.
+                                if (!savedSession || !savedSession.messagesHtml) container.replaceChildren();
+                                const existingUserMsgs = container.querySelectorAll('.chat-msg');
+                                if (existingUserMsgs.length === 0) {
+                                    data.messages.forEach(msg => {
+                                        if (msg.sender_type === 'user') {
+                                            appendUserBubble(msg.message, msg.created_at);
+                                        } else if (msg.sender_type === 'bot') {
+                                            appendBotBubble(msg.message, msg.meta ? msg.meta.model : null, msg.created_at);
+                                        } else if (msg.sender_type === 'cs') {
+                                            appendCsBubble(msg.message, msg.sender_name || 'CS', msg.id, msg.created_at);
+                                        } else if (msg.sender_type === 'system') {
+                                            container.insertAdjacentHTML('beforeend', `
+                                    <div class="text-center my-2" data-msg-id="${msg.id}">
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 fs-11" style="white-space: normal !important; display: inline-block; max-width: 92%; line-height: 1.45; text-align: center; word-break: break-word;">
+                                            ${escapeHtml(msg.message)}
+                                        </span>
+                                    </div>
+                                `);
+                                        }
+                                        if (msg.id) {
+                                            lastPollMessageId = Math.max(lastPollMessageId, msg.id);
+                                        }
+                                    });
+
+                                    clientChatHistory = [];
+                                    data.messages.forEach(msg => {
+                                        if (msg.sender_type === 'user') {
+                                            clientChatHistory.push({ role: 'user', content: msg.message });
+                                        } else if (msg.sender_type === 'bot') {
+                                            clientChatHistory.push({ role: 'assistant', content: msg.message });
+                                        }
+                                    });
+
+                                    scrollChatToBottom();
+                                    persistChatState();
+                                    if (isChatEscalated && chatSessionToken) startWidgetPolling();
+                                }
+                            }
+                        }
+                    })
+                    .catch(err => console.debug('Sync active session:', err));
+            }
+        });
+
+
+        function scrollChatToBottom() {
+            const container = document.getElementById('chat-messages-container');
+            if (container) {
+                requestAnimationFrame(() => {
+                    container.scrollTop = container.scrollHeight;
+                });
+                setTimeout(() => {
+                    container.scrollTop = container.scrollHeight;
+                }, 80);
+            }
+        }
+
+        function updateOperatingSchedule(schedule) {
+            const scheduleEl = document.getElementById('chat-operating-hours-text');
+            if (scheduleEl && schedule) scheduleEl.textContent = schedule;
+        }
+
+        // Handle guest pre-chat submission
+        function handleStartChat(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('prechat-name');
+            const emailInput = document.getElementById('prechat-email');
+            const phoneInput = document.getElementById('prechat-phone');
+            const name = nameInput.value.trim();
+            if (!name) return;
+
+            // Switch view
+            document.getElementById('chat-preform-section').classList.add('d-none');
+            const convSection = document.getElementById('chat-conversation-section');
+            convSection.classList.remove('d-none');
+
+            const displayName = document.getElementById('display-user-name');
+            if (displayName) displayName.textContent = name;
+
+            // Initialize session via API
+            fetch('/api/live-chat/init', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: emailInput ? emailInput.value.trim() : '',
+                    phone: phoneInput ? phoneInput.value.trim() : '',
+                    user_type: 'Tamu / Umum'
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    updateOperatingSchedule(data.operating_schedule);
+                    chatSessionToken = data.session_token;
+                    updateStoredSession({
+                        user: { name: name, email: emailInput ? emailInput.value.trim() : '', phone: phoneInput ? phoneInput.value.trim() : '' },
+                        isOpen: true,
+                        sessionToken: chatSessionToken
+                    });
+                    persistChatState();
+                })
+                .catch(err => console.error('Init session error:', err));
+
+            scrollChatToBottom();
+        }
+
+        function sendQuickPrompt(text) {
+            const input = document.getElementById('chat-message-input');
+            input.value = text;
+            handleSendUserMessage(new Event('submit'));
+        }
+
+        // Handle sending message
+        async function handleSendUserMessage(event) {
+            event.preventDefault();
+            const input = document.getElementById('chat-message-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            input.value = '';
+            appendUserBubble(text);
+            scrollChatToBottom();
+            persistChatState();
+
+            // Auto-init session for logged-in users who haven't started a session yet
+            if (!chatSessionToken) {
+                try {
+                    const initRes = await fetch('/api/live-chat/init', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify({
+                            name: "Nabil Rizki Wardana",
+                            email: "nwardana@student.uns.ac.id",
+                            phone: "",
+                            user_type: "Mahasiswa \/ Dosen"
+                        })
+                    });
+                    const initData = await initRes.json();
+                    updateOperatingSchedule(initData.operating_schedule);
+                    chatSessionToken = initData.session_token;
+                    updateStoredSession({
+                        sessionToken: chatSessionToken,
+                        user: {
+                            name: "Nabil Rizki Wardana",
+                            email: "nwardana@student.uns.ac.id",
+                            phone: ""
+                        }
+                    });
+                } catch (e) {
+                    console.error('Auto-init error:', e);
+                }
+            }
+            // 1. KONDISI SUDAH DI-ESKALASI: Obrolan bersama CS manusia
+            if (isChatEscalated) {
+                const typingId = showTypingIndicator();
+                scrollChatToBottom();
+
+                fetch('/api/live-chat/message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: text,
+                        session_token: chatSessionToken,
+                        is_escalated: true,
+                        history: clientChatHistory
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        removeTypingIndicator(typingId);
+                        updateOperatingSchedule(data.operating_schedule);
+
+                        // Jika sesi CS ternyata sudah selesai dan server mengembalikan reply AI:
+                        if (data.reply) {
+                            isChatEscalated = false;
+                            if (data.session_token && data.session_token !== chatSessionToken) {
+                                chatSessionToken = data.session_token;
+                                clientChatHistory = [];
+                            }
+                            const headerStatus = document.getElementById('chat-header-status');
+                            if (headerStatus) headerStatus.innerHTML = 'Online &bull; Assistant';
+
+                            clientChatHistory.push({ role: 'user', content: text });
+                            clientChatHistory.push({ role: 'assistant', content: data.reply });
+                            appendBotBubble(data.reply, data.model);
+                        }
+
+                        persistChatState();
+                        if (isChatEscalated) {
+                            pollWidgetMessages();
+                        }
+                    })
+                    .catch(err => {
+                        removeTypingIndicator(typingId);
+                        console.error('Gagal mengirim pesan:', err);
+                    });
+
+                return;
+            }
+
+            // Panggil API /api/live-chat/message (Server mendeteksi apakah pesan meminta CS atau chat biasa dengan AI)
+            const typingId = showTypingIndicator();
+            scrollChatToBottom();
+
+            fetch('/api/live-chat/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: text,
+                    session_token: chatSessionToken,
+                    history: clientChatHistory
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    removeTypingIndicator(typingId);
+                    updateOperatingSchedule(data.operating_schedule);
+
+                    // Update token jika server meng-assign token sesi baru (misal karena sesi lama sudah di-resolve)
+                    if (data.session_token && data.session_token !== chatSessionToken) {
+                        chatSessionToken = data.session_token;
+                        clientChatHistory = [];
+                        isChatEscalated = false;
+                        updateStoredSession({ sessionToken: chatSessionToken, isChatEscalated: false });
+                    }
+
+                    // JIKA SERVER MENGEMBALIKAN STATUS OFFLINE (di luar jam kerja CS)
+                    if (data.is_offline || data.status === 'offline') {
+                        isChatEscalated = false;
+                        chatSessionStatus = 'bot';
+                        const queueBanner = document.getElementById('chat-queue-banner');
+                        if (queueBanner) queueBanner.classList.add('d-none');
+
+                        const headerStatus = document.getElementById('chat-header-status');
+                        if (headerStatus) {
+                            headerStatus.innerHTML = 'Online &bull; Assistant';
+                        }
+
+                        if (data.reply) {
+                            appendSystemMessage(data.reply);
+                        }
+
+                        if (data.show_ticket_btn !== false) {
+                            const container = document.getElementById('chat-messages-container');
+                            if (container && !container.querySelector('.offline-ticket-btn')) {
+                                container.insertAdjacentHTML('beforeend', `
+                        <div class="text-center my-3 offline-ticket-btn">
+                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                                <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
+                            </a>
+                        </div>
+                    `);
+                                scrollChatToBottom();
+                            }
+                        }
+
+                        persistChatState();
+                        return;
+                    }
+
+                    const headerStatus = document.getElementById('chat-header-status');
+                    if (headerStatus && !isChatEscalated) {
+                        headerStatus.innerHTML = 'Online &bull; Assistant';
+                    }
+
+                    // Record history context
+                    clientChatHistory.push({ role: 'user', content: text });
+                    if (data.reply) {
+                        clientChatHistory.push({ role: 'assistant', content: data.reply });
+                        appendBotBubble(data.reply, data.model);
+                    }
+
+                    if (data.queue_message) {
+                        if (data.queue_message_id) {
+                            lastPollMessageId = Math.max(lastPollMessageId, Number(data.queue_message_id));
+                        }
+                        appendSystemMessage(data.queue_message, data.queue_message_id || null);
+                    }
+
+                    // Check if AI or server detected human CS escalation
+                    if (data.escalate || data.session_status === 'queued') {
+                        isChatEscalated = true;
+                        chatSessionStatus = 'queued';
+                        const queueBanner = document.getElementById('chat-queue-banner');
+                        if (queueBanner) {
+                            queueBanner.classList.remove('d-none');
+                            if (data.queue_position) {
+                                const queueInfo = queueBanner.querySelector('small');
+                                if (queueInfo) {
+                                    queueInfo.innerHTML = 'Antrean Anda: <strong class="text-primary">#' + String(data.queue_position).padStart(2, '0') + '</strong> &bull; Menunggu CS...';
+                                }
+                            }
+                        }
+                        if (headerStatus) {
+                            headerStatus.textContent = "Dalam Antrean Customer Service...";
+                        }
+                        startWidgetPolling();
+                    }
+
+                    scrollChatToBottom();
+                    persistChatState();
+                })
+                .catch(err => {
+                    removeTypingIndicator(typingId);
+                    // Fallback to local empathetic response if network fails
+                    processBotResponse(text);
+                    scrollChatToBottom();
+                    persistChatState();
+                });
+        }
+
+        function appendSystemMessage(text, msgId = null) {
+            const container = document.getElementById('chat-messages-container');
+            if (!container) return;
+            const html = `
+        <div class="text-center my-2" ${msgId ? `data-msg-id="${msgId}"` : ''}>
+            <span class="badge px-3 py-2 fs-11 text-wrap shadow-xs" style="white-space: normal !important; display: inline-block; max-width: 92%; line-height: 1.45; text-align: center; word-break: break-word; background-color: #fff7ed !important; color: #334155 !important; border: 1px solid #fed7aa !important;">
+                <i class="mdi mdi-clock-alert-outline me-1"></i> ${escapeHtml(text)}
+            </span>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+            scrollChatToBottom();
+            persistChatState();
+        }
+
+        // Server messages carry created_at; fresh local messages use the current time.
+        function formatMsgTime(createdAt = null) {
+            // Laravel sends microseconds (.000000Z); Safari only parses up to milliseconds.
+            const d = createdAt ? new Date(String(createdAt).replace(/\.(\d{3})\d+/, '.$1')) : new Date();
+            return (isNaN(d.getTime()) ? new Date() : d).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function appendBotBubble(rawText, modelName, createdAt = null) {
+            const container = document.getElementById('chat-messages-container');
+            const timeNow = formatMsgTime(createdAt);
+
+            let formattedText = escapeHtml(rawText).replace(/\n/g, '<br>');
+            const lower = rawText.toLowerCase();
+            let serviceCard = '';
+
+            if (lower.includes('sso') || lower.includes('reset') || lower.includes('password')) {
+                serviceCard = `
+            <div class="recommendation-card p-2 mt-2 bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <span class="badge bg-primary-subtle text-primary fs-10 fw-semibold">UPT TIK</span>
+                    <small class="text-success fs-10 fw-semibold">Layanan Mandiri</small>
+                </div>
+                <div class="fw-bold fs-12 text-dark mb-1">Reset Password Akun SSO UNS</div>
+                <p class="text-muted fs-11 mb-2">Layanan bantuan pemulihan akun Single Sign-On (SSO) bagi mahasiswa, dosen, dan tendik.</p>
+                <a href="/layanan/upt-tik" target="_blank" class="btn btn-sm btn-primary w-100 py-1 fs-11 text-white" style="background-color: #4a98be; border-color: #4a98be;">
+                    Buka Detail Layanan &rarr;
+                </a>
+            </div>
+        `;
+            } else if (lower.includes('wifi') || lower.includes('internet') || lower.includes('eduroam') || lower.includes('jaringan')) {
+                serviceCard = `
+            <div class="recommendation-card p-2 mt-2 bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <span class="badge bg-primary-subtle text-primary fs-10 fw-semibold">UPT TIK</span>
+                    <small class="text-success fs-10 fw-semibold">Divisi Jaringan</small>
+                </div>
+                <div class="fw-bold fs-12 text-dark mb-1">Helpdesk Jaringan & WiFi Kampus</div>
+                <p class="text-muted fs-11 mb-2">Penanganan gangguan sinyal eduroam, hotspot UNS, dan sambungan kabel LAN fakultas.</p>
+                <a href="/layanan/upt-tik" target="_blank" class="btn btn-sm btn-primary w-100 py-1 fs-11 text-white" style="background-color: #4a98be; border-color: #4a98be;">
+                    Buka Detail Layanan &rarr;
+                </a>
+            </div>
+        `;
+            }
+
+            const html = `
+        <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+            <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                </svg>
+            </div>
+            <div class="chat-bubble-wrapper">
+                <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                    <div class="mb-1">${formattedText}</div>
+                    ${serviceCard}
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-1">
+                    <small class="text-muted fs-10" title="Model AI: ${escapeHtml(modelName || 'Default')}">${timeNow} &bull; Assistant</small>
+                </div>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function appendUserBubble(text, createdAt = null) {
+            const container = document.getElementById('chat-messages-container');
+            const timeNow = formatMsgTime(createdAt);
+
+            const html = `
+        <div class="chat-msg chat-msg-user d-flex justify-content-end mb-3">
+            <div class="chat-bubble-wrapper text-end">
+                <div class="chat-bubble-user p-2 px-3 rounded shadow-xs fs-13 text-start">
+                    ${escapeHtml(text)}
+                </div>
+                <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Anda</small>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function showTypingIndicator() {
+            const container = document.getElementById('chat-messages-container');
+            const id = 'typing-' + Date.now();
+            const html = `
+        <div id="${id}" class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+            <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                </svg>
+            </div>
+            <div class="chat-bubble-wrapper">
+                <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-muted fs-12 d-flex align-items-center gap-1">
+                    <span>Mengetik</span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 5px; height: 5px;" role="status"></span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 5px; height: 5px; animation-delay: 0.2s;" role="status"></span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 5px; height: 5px; animation-delay: 0.4s;" role="status"></span>
+                </div>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+            return id;
+        }
+
+        function removeTypingIndicator(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, function (m) { return map[m]; });
+        }
+
+        // Logic: Determine response based on:
+        // 1. User asking for CS explicitly (Intent A)
+        // 2. Out of scope / AI limitation (Intent B)
+        // 3. Normal FAQ queries (Service recommendation cards)
+        function processBotResponse(query) {
+            const lower = query.toLowerCase();
+            const container = document.getElementById('chat-messages-container');
+            const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // 1. Pemicu: Pengguna secara eksplisit minta bicara dengan CS / manusia
+            const isHumanCsRequested = lower.includes('cs') ||
+                lower.includes('manusia') ||
+                lower.includes('admin') ||
+                lower.includes('operator') ||
+                lower.includes('staf') ||
+                lower.includes('bicara') ||
+                lower.includes('ngomong') ||
+                lower.includes('petugas');
+
+            // 2. Pemicu: Pengguna sudah mencoba solusi tapi menemui jalan buntu (Deadlock)
+            const isDeadlock = lower.includes('buntu') ||
+                lower.includes('tetap gagal') ||
+                lower.includes('gak masuk') ||
+                lower.includes('masih belum bisa') ||
+                lower.includes('sudah dicoba') ||
+                lower.includes('tetap error') ||
+                lower.includes('mentok') ||
+                lower.includes('gak mempan') ||
+                lower.includes('belum bisa juga');
+
+            // 3. Pemicu: Topik di luar etika / ruang lingkup kampus (Politik, Tugas, Jual-Beli)
+            const isOutOfBoundary = lower.includes('sengketa') ||
+                lower.includes('tanah') ||
+                lower.includes('politik') ||
+                lower.includes('kos') ||
+                lower.includes('dana') ||
+                lower.includes('refund') ||
+                lower.includes('jual') ||
+                lower.includes('beli') ||
+                lower.includes('skripsi');
+
+            // KASUS 1: Permintaan langsung bicara dengan staf CS
+            if (isHumanCsRequested) {
+                const msg = `
+            <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+                <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                    </svg>
+                </div>
+                <div class="chat-bubble-wrapper">
+                    <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                        <p class="mb-1 text-primary fw-semibold"><i class="mdi mdi-account-switch-outline me-1"></i>Menghubungkan ke Customer Service</p>
+                        <p class="mb-0">Tentu Kak, permintaan Kakak untuk berbicara langsung dengan staf kami telah diterima. Saya langsung alihkan obrolan ini ke antrean Customer Service staf kami yang sedang standby ya. Mohon tunggu sebentar.</p>
+                    </div>
+                    <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Assistant</small>
+                </div>
+            </div>
+        `;
+                container.insertAdjacentHTML('beforeend', msg);
+                triggerEscalationToHuman("Permintaan Pengguna untuk Berbicara dengan CS");
+                return;
+            }
+
+            // KASUS 2: Solusi buntu / sudah dicoba tapi tetap gagal -> Eskalasi Empatis
+            if (isDeadlock) {
+                const msg = `
+            <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+                <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                    </svg>
+                </div>
+                <div class="chat-bubble-wrapper">
+                    <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                        <p class="mb-1 text-warning fw-semibold"><i class="mdi mdi-heart-pulse me-1"></i>Memahami Kendala Kakak</p>
+                        <p class="mb-1">Waduh Kak, saya paham sekali kepanikan Kakak, apalagi kendala ini masih berlanjut setelah langkah tadi dicoba.</p>
+                        <p class="mb-0 text-muted fs-12">Karena kendala ini memerlukan pengecekan langsung pada server autentikasi kami oleh staf teknis, saya segera hubungkan obrolan Kakak ke rekan Customer Service ya.</p>
+                    </div>
+                    <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Assistant</small>
+                </div>
+            </div>
+        `;
+                container.insertAdjacentHTML('beforeend', msg);
+                triggerEscalationToHuman("Solusi Mandiri Menemui Jalan Buntu");
+                return;
+            }
+
+            // KASUS 3: Di luar batasan kampus -> Tolak santun berempati tanpa buang ke CS
+            if (isOutOfBoundary) {
+                const msg = `
+            <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+                <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                    </svg>
+                </div>
+                <div class="chat-bubble-wrapper">
+                    <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                        <p class="mb-1 text-secondary fw-semibold"><i class="mdi mdi-shield-alert-outline me-1"></i>Informasi Ruang Lingkup</p>
+                        <p class="mb-0">Mohon maaf ya Kak, sebagai Asisten Virtual resmi eService UNS, saya hanya dapat membantu pertanyaan seputar layanan akademik, fasilitas, dan sistem informasi kampus di lingkungan UNS. Apakah ada informasi layanan kampus lainnya yang bisa saya bantu?</p>
+                    </div>
+                    <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Assistant</small>
+                </div>
+            </div>
+        `;
+                container.insertAdjacentHTML('beforeend', msg);
+                scrollChatToBottom();
+                persistChatState();
+                return;
+            }
+
+            // KASUS 4: Masalah Umum -> Respon Empatis & Panduan Langkah Demi Langkah
+            let answerText = "";
+            let serviceCard = "";
+
+            if (lower.includes('reset') || lower.includes('password') || lower.includes('sso') || lower.includes('login') || lower.includes('akun')) {
+                answerText = `
+            <p class="mb-1">Waduh, saya paham pasti sangat merepotkan ya Kak kalau akun SSO terkendala. Tenang dulu, mari kita coba langkah pemulihan cepat ini:</p>
+            <ol class="ps-3 mb-2 fs-12">
+                <li>Buka portal SSO di <code>sso.uns.ac.id</code> lalu klik <strong>Lupa Password</strong>.</li>
+                <li>Masukkan email alternatif terdaftar Kakak untuk menerima link reset instan.</li>
+            </ol>
+            <p class="mb-0 fs-12 text-muted">Silakan dicoba terlebih dahulu ya Kak. Jika link tidak kunjung masuk atau masih terkendala, kabari saya agar segera saya alihkan ke staf CS.</p>
+        `;
+                serviceCard = `
+            <div class="recommendation-card p-2 mt-2 bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <span class="badge bg-primary-subtle text-primary fs-10 fw-semibold">UPT TIK</span>
+                    <small class="text-success fs-10 fw-semibold">Layanan Mandiri</small>
+                </div>
+                <div class="fw-bold fs-12 text-dark mb-1">Reset Password Akun SSO UNS</div>
+                <p class="text-muted fs-11 mb-2">Layanan bantuan pemulihan akun Single Sign-On (SSO) bagi mahasiswa, dosen, dan tendik.</p>
+                <a href="/layanan/upt-tik" target="_blank" class="btn btn-sm btn-primary w-100 py-1 fs-11 text-white" style="background-color: #4a98be; border-color: #4a98be;">
+                    Buka Detail Layanan &rarr;
+                </a>
+            </div>
+        `;
+            } else if (lower.includes('wifi') || lower.includes('internet') || lower.includes('jaringan') || lower.includes('koneksi')) {
+                answerText = `
+            <p class="mb-1">Waduh, koneksi internet yang terputus pasti sangat mengganggu aktivitas kuliah atau kerja Kakak. Mari kita periksa hal ini terlebih dahulu:</p>
+            <ol class="ps-3 mb-2 fs-12">
+                <li>Pastikan terhubung ke SSID resmi <strong>@wifi.id</strong> atau <strong>eduroam</strong>.</li>
+                <li>Coba lakukan <em>Forget Network</em> di perangkat, lalu sambungkan ulang dengan akun SSO aktif.</li>
+            </ol>
+            <p class="mb-0 fs-12 text-muted">Jika sinyal di lokasi Kakak masih lemah atau tetap tidak tersambung, sampaikan ke saya ya agar bisa saya teruskan ke tim teknis.</p>
+        `;
+                serviceCard = `
+            <div class="recommendation-card p-2 mt-2 bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <span class="badge bg-primary-subtle text-primary fs-10 fw-semibold">UPT TIK</span>
+                    <small class="text-success fs-10 fw-semibold">Divisi Jaringan</small>
+                </div>
+                <div class="fw-bold fs-12 text-dark mb-1">Helpdesk Jaringan & WiFi Kampus</div>
+                <p class="text-muted fs-11 mb-2">Penanganan gangguan sinyal eduroam, hotspot UNS, dan sambungan LAN fakultas.</p>
+                <a href="/layanan/upt-tik" target="_blank" class="btn btn-sm btn-primary w-100 py-1 fs-11 text-white" style="background-color: #4a98be; border-color: #4a98be;">
+                    Buka Detail Layanan &rarr;
+                </a>
+            </div>
+        `;
+            } else {
+                answerText = `
+            <p class="mb-1">Halo Kak! Terima kasih sudah menghubungi eService UNS. Saya siap memandu kendala Kakak seputar layanan UPT TIK, akademik, administrasi, maupun fasilitas kampus.</p>
+            <p class="mb-0 fs-12 text-muted">Silakan ceritakan kendala spesifik yang sedang dialami, saya akan bantu pandu langkah-langkah solusinya terlebih dahulu ya.</p>
+        `;
+                serviceCard = `
+            <div class="recommendation-card p-2 mt-2 bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <span class="badge bg-secondary-subtle text-secondary fs-10 fw-semibold">Direktori eService</span>
+                </div>
+                <div class="fw-bold fs-12 text-dark mb-1">Katalog Layanan & Helpdesk UNS</div>
+                <p class="text-muted fs-11 mb-2">Lihat daftar lengkap unit kerja dan ajukan keluhan/permohonan secara daring.</p>
+                <a href="/#layanan" class="btn btn-sm btn-outline-secondary w-100 py-1 fs-11">
+                    Lihat Semua Layanan &rarr;
+                </a>
+            </div>
+        `;
+            }
+
+            const html = `
+        <div class="chat-msg chat-msg-bot d-flex gap-2 mb-3">
+            <div class="chat-avatar bg-white border rounded d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; color: #4a98be;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M8 18h8v-1H8v1z"/>
+                </svg>
+            </div>
+            <div class="chat-bubble-wrapper">
+                <div class="chat-bubble-bot p-2 px-3 rounded shadow-xs bg-white border text-dark fs-13">
+                    ${answerText}
+                    ${serviceCard}
+                </div>
+                <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Assistant</small>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+            scrollChatToBottom();
+            persistChatState();
+        }
+
+        // Helper: Tampilkan indikator CS manusia sedang mengetik
+        function showCsTypingIndicator(senderName = 'Ahmad Fauzi') {
+            const container = document.getElementById('chat-messages-container');
+            const id = 'typing-cs-' + Date.now();
+            const initials = senderName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'AF';
+            const html = `
+        <div id="${id}" class="chat-msg chat-msg-cs d-flex gap-2 mb-3">
+            <div class="chat-avatar bg-primary text-white rounded d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; background-color: #4a98be !important; font-size: 11px;">
+                ${initials}
+            </div>
+            <div class="chat-bubble-wrapper">
+                <div class="chat-bubble-cs p-2 px-3 rounded shadow-xs text-muted fs-12 d-flex align-items-center gap-1">
+                    <span>${escapeHtml(senderName)} sedang mengetik</span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 4px; height: 4px;" role="status"></span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 4px; height: 4px; animation-delay: 0.2s;" role="status"></span>
+                    <span class="spinner-grow spinner-grow-sm text-primary" style="width: 4px; height: 4px; animation-delay: 0.4s;" role="status"></span>
+                </div>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+            return id;
+        }
+
+        // Helper: Tambahkan bubble chat dari CS Manusia
+        function appendCsBubble(text, senderName = 'Ahmad Fauzi', msgId = null, createdAt = null) {
+            if (msgId && document.querySelector(`#chat-messages-container [data-msg-id="${msgId}"]`)) {
+                return; // Sudah dirender di layar, cegah duplikasi
+            }
+
+            const container = document.getElementById('chat-messages-container');
+            const timeNow = formatMsgTime(createdAt);
+            const initials = senderName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'CS';
+
+            const html = `
+        <div class="chat-msg chat-msg-cs d-flex gap-2 mb-3" ${msgId ? `data-msg-id="${msgId}"` : ''}>
+            <div class="chat-avatar bg-primary text-white rounded d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width: 32px; height: 32px; min-width: 32px; background-color: #4a98be !important; font-size: 11px;">
+                ${initials}
+            </div>
+            <div class="chat-bubble-wrapper">
+                <div class="chat-bubble-cs p-2 px-3 rounded shadow-xs fs-13">
+                    <div class="fw-bold fs-11 text-primary mb-1">${escapeHtml(senderName)} &bull; Customer Service</div>
+                    <p class="mb-0">${escapeHtml(text).replace(/\n/g, '<br>')}</p>
+                </div>
+                <small class="text-muted fs-10 mt-1 d-block">${timeNow} &bull; Customer Service</small>
+            </div>
+        </div>
+    `;
+            container.insertAdjacentHTML('beforeend', html);
+            scrollChatToBottom();
+            persistChatState();
+        }
+
+        // Function to handle escalation to human CS - REAL API
+        function triggerEscalationToHuman(reason) {
+            const queueBanner = document.getElementById('chat-queue-banner');
+            const headerStatus = document.getElementById('chat-header-status');
+
+            scrollChatToBottom();
+            persistChatState();
+
+            // Call real escalation API
+            if (chatSessionToken) {
+                fetch('/api/live-chat/escalate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        session_token: chatSessionToken,
+                        reason: reason
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        updateOperatingSchedule(data.operating_schedule);
+                        if (data.is_offline || data.status === 'offline') {
+                            // Di luar jam kerja
+                            isChatEscalated = false;
+                            chatSessionStatus = 'bot';
+                            if (queueBanner) queueBanner.classList.add('d-none');
+                            if (headerStatus) headerStatus.innerHTML = 'Online &bull; Assistant';
+                            appendSystemMessage(data.message || data.reply || 'Layanan Customer Service saat ini sedang di luar jam operasional.');
+                            const container = document.getElementById('chat-messages-container');
+                            if (container && !container.querySelector('.offline-ticket-btn')) {
+                                container.insertAdjacentHTML('beforeend', `
+                        <div class="text-center my-3 offline-ticket-btn">
+                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                                <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
+                            </a>
+                        </div>
+                    `);
+                                scrollChatToBottom();
+                            }
+                            persistChatState();
+                            return;
+                        }
+
+                        if (data.status === 'queued' || data.session_status === 'queued' || data.queue_position) {
+                            isChatEscalated = true;
+                            chatSessionStatus = 'queued';
+                            if (data.message) {
+                                appendSystemMessage(data.message, data.message_id || null);
+                            }
+                            if (queueBanner) {
+                                queueBanner.classList.remove('d-none');
+                                const queueInfo = queueBanner.querySelector('small');
+                                if (queueInfo) {
+                                    queueInfo.innerHTML = 'Antrean Anda: <strong class="text-primary">#' + String(data.queue_position).padStart(2, '0') + '</strong> &bull; Menunggu CS...';
+                                }
+                            }
+                            if (headerStatus) headerStatus.textContent = 'Dalam Antrean Customer Service...';
+                            startWidgetPolling();
+                            return;
+                        }
+
+                        // Backward compatibility for older responses that only provide cs_info.
+                        if (data.status === 'cs_info') {
+                            isChatEscalated = false;
+                            chatSessionStatus = 'bot';
+                            if (queueBanner) queueBanner.classList.add('d-none');
+                            if (headerStatus) headerStatus.innerHTML = 'Online &bull; Assistant';
+                            if (data.message) appendBotBubble(data.message, null);
+                        }
+                    })
+                    .catch(err => console.error('Escalate error:', err));
+            }
+        }
+
+        let isWidgetPollInProgress = false;
+
+        // Start polling for CS messages (real-time via AJAX)
+        function startWidgetPolling() {
+            if (window._widgetPollTimer) {
+                clearInterval(window._widgetPollTimer);
+                window._widgetPollTimer = null;
+            }
+            // Poll langsung saat dipanggil, lalu interval setiap 3 detik
+            pollWidgetMessages();
+            window._widgetPollTimer = setInterval(pollWidgetMessages, 3000);
+        }
+
+        function pollWidgetMessages() {
+            if (!chatSessionToken || isWidgetPollInProgress) return;
+            isWidgetPollInProgress = true;
+
+            fetch(`/api/live-chat/poll?session_token=${encodeURIComponent(chatSessionToken)}&last_id=${lastPollMessageId}`, {
+                headers: { 'Accept': 'application/json' }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status !== 'ok') return;
+
+                    const queueBanner = document.getElementById('chat-queue-banner');
+                    const headerStatus = document.getElementById('chat-header-status');
+
+                    // Session was picked up by CS!
+                    if (data.session_status === 'active') {
+                        chatSessionStatus = 'active';
+                        if (queueBanner) queueBanner.classList.add('d-none');
+                        if (headerStatus && data.claimed_by_name) {
+                            headerStatus.textContent = 'Terhubung dengan CS: ' + data.claimed_by_name;
+                        }
+                    }
+
+                    // Session resolved or closed
+                    if (data.session_status === 'resolved' || data.session_status === 'closed') {
+                        isChatEscalated = false;
+                        chatSessionStatus = data.session_status;
+                        clientChatHistory = []; // Reset konteks sesi lama agar tidak terbawa ke sesi AI berikutnya!
+                        if (headerStatus) headerStatus.innerHTML = 'Selesai &bull; AI Standby';
+                        if (queueBanner) queueBanner.classList.add('d-none');
+                        if (window._widgetPollTimer) {
+                            clearInterval(window._widgetPollTimer);
+                            window._widgetPollTimer = null;
+                        }
+                        persistChatState();
+                    }
+
+                    // Queued (also when a CS returns the chat to the queue or it is released): show the banner again
+                    if (data.session_status === 'queued') {
+                        chatSessionStatus = 'queued';
+                        if (queueBanner) queueBanner.classList.remove('d-none');
+                        if (headerStatus) headerStatus.textContent = 'Dalam Antrean Customer Service...';
+                        const queueInfo = queueBanner?.querySelector('small');
+                        if (queueInfo && data.queue_position) {
+                            queueInfo.innerHTML = 'Antrean Anda: <strong class="text-primary">#' + String(data.queue_position).padStart(2, '0') + '</strong> &bull; Menunggu CS...';
+                        }
+                    }
+
+                    // Render new messages from CS dengan pencegahan duplikasi
+                    if (data.new_messages && data.new_messages.length > 0) {
+                        data.new_messages.forEach(msg => {
+                            lastPollMessageId = Math.max(lastPollMessageId, msg.id);
+
+                            // CEK DEDUP: Jika ID pesan sudah ada di DOM, jangan append ulang
+                            if (msg.id && document.querySelector(`#chat-messages-container [data-msg-id="${msg.id}"]`)) {
+                                return;
+                            }
+
+                            if (msg.sender_type === 'cs') {
+                                appendCsBubble(msg.message, msg.sender_name || 'CS', msg.id, msg.created_at);
+                            } else if (msg.sender_type === 'system') {
+                                const container = document.getElementById('chat-messages-container');
+                                container.insertAdjacentHTML('beforeend', `
+                        <div class="text-center my-2" data-msg-id="${msg.id}">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 fs-11" style="white-space: normal !important; display: inline-block; max-width: 92%; line-height: 1.45; text-align: center; word-break: break-word;">
+                                ${escapeHtml(msg.message)}
+                            </span>
+                        </div>
+                    `);
+                            }
+                        });
+                        scrollChatToBottom();
+                        persistChatState();
+                    }
+                })
+                .catch(err => console.error('Widget poll error:', err))
+                .finally(() => {
+                    isWidgetPollInProgress = false;
+                });
+        }
+    </script>
+    <script src="https://eservice.uns.ac.id/assets/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/libs/feather-icons/feather-icons.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/js/pages/plugins/lord-icon-2.1.0.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/libs/cleave.js/cleave.js.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/libs/masonry-layout/masonry-layout.min.js"></script>
+    <script>
+        window.pluginsAsset = 'https://eservice.uns.ac.id/assets';
+    </script>
+    <script src="https://eservice.uns.ac.id/assets/js/plugins.min.js?v=2"></script>
+
+    <script src="https://eservice.uns.ac.id/assets/deliver/jquery-3.6.0/jquery.min.js"></script>
+
+    <script src="https://eservice.uns.ac.id/assets/deliver/select2.min.js"></script>
+
+    <script src="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/js/plugins/buffer.min.js"></script>
+    <script
+        src="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/js/plugins/filetype.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/js/plugins/piexif.min.js"></script>
+    <script
+        src="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/js/plugins/sortable.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/deliver/bootstrap-fileinput-5.5.2/js/fileinput.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/libs/datetimepicker/jquery.datetimepicker.min.js"></script>
+
+    <script src="https://eservice.uns.ac.id/assets/libs/nprogress/nprogress.min.js"></script>
+    <script src="https://eservice.uns.ac.id/assets/js/push.min.js"></script>
+
+    <script src="https://eservice.uns.ac.id/statics/js/app.js"></script>
+    <script src="https://eservice.uns.ac.id/statics/js/site.js?v=3"></script>
+
+    <script src="https://eservice.uns.ac.id/js/push-register.js?v=1"></script>
+
+
+
+</body>
+
+</html>
