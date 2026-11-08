@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>eService UNS - Pencarian</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
@@ -54,6 +55,17 @@
     <link href="https://eservice.uns.ac.id/statics/css/site.css?v=4" rel="stylesheet" type="text/css" />
     <link href="https://eservice.uns.ac.id/statics/css/rekomendasi.css?v=1" rel="stylesheet" type="text/css" />
 
+
+    <!-- ICON PACKS (Offline Local + Online CDN Fallback with CORS) -->
+    <link href="../assets/css/remixicon.css" rel="stylesheet">
+    <link href="../assets/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -66,6 +78,12 @@
                         <strong>Informasi Jam Layanan ULT — Layanan Tatap Muka: 08.00–15.00 | Contact Center:
                             08.00–17.00</strong>
                     </div>
+                    <div class="ms-3 d-none d-md-flex align-items-center">
+  <div class="input-group input-group-sm" style="width:260px">
+    <input type="text" class="form-control" placeholder="Cari layanan..." id="global-search-input">
+    <a href="SearchPage.html" class="btn btn-light"><i class="ri-search-line"></i></a>
+  </div>
+</div>
                     <div class="flex-shrink-0 ms-auto">
                         <div class="hstack gap-3">
                             <a href="https://uns.ac.id" class="d-none d-sm-block">Situs Utama</a>
@@ -85,7 +103,7 @@
                 style="box-shadow: 0 1px 5px -2px rgba(56, 65, 74, 0.15); background-color:#fff; color:#000"
                 id="navbar">
                 <div class="container">
-                    <a class="navbar-brand" href="https://eservice.uns.ac.id/id/site">
+                    <a class="navbar-brand" href="../LandingPage/LandingPage.html">
                         <img src="https://eservice.uns.ac.id/assets/images/logo-dark.png" class="card-logo" alt="logo"
                             height="34">
                     </a>
@@ -98,38 +116,19 @@
                         <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site">Halaman Depan</a>
+                                    href="../LandingPage/LandingPage.html">Beranda</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/layanan">Layanan</a>
+                                    href="../LayananPage/LayananPage.html">Layanan</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/unit">Unit</a>
-                            </li>
-                            <li class="nav-item">
-
-                                <a style="color: #000" class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/unit/pengaduan">Pengaduan</a>
+                                    href="#">Bantuan</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/panduan">Panduan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a style="color: #000" data-pjax class="nav-link fs-14 active"
-                                    href="https://eservice.uns.ac.id/id/site/search">Pencarian</a>
-                            </li>
-                            <li class="nav-item">
-                                <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/user/riwayat">Riwayat Saya</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" id="btn-aktifkan-notifikasi"
-                                    onclick="eservicePushEnable()" style="color: #000" class="nav-link fs-14">
-                                    <i class="ri-notification-3-line align-middle me-1"></i>Aktifkan Notifikasi
-                                </a>
+                                    href="../riwayat/RiwayatPage.html">Riwayat Saya</a>
                             </li>
                         </ul>
                         <div class="my-2 my-lg-0">
@@ -276,7 +275,67 @@
                         </div>
 
                         <div class="row">
-                            <div id="search-list">
+                            
+                        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2" id="search-results-header">
+                            <div>
+                                <h6 class="fs-14 mb-0 fw-semibold text-muted" id="search-count-label">Menampilkan layanan tersedia</h6>
+                            </div>
+                            <div id="active-filter-chips" class="d-flex align-items-center gap-2"></div>
+                        </div>
+                        <div id="search-empty-state" style="display:none;" class="card p-4 text-center my-3 border-dashed">
+                            <div class="avatar-md mx-auto mb-3">
+                                <div class="avatar-title bg-light text-warning rounded-circle fs-32">
+                                    <i class="ri-search-line"></i>
+                                </div>
+                            </div>
+                            <h5>Layanan Tidak Ditemukan</h5>
+                            <p class="text-muted">Kata kunci pencarian Anda tidak cocok dengan layanan yang ada. Butuh bantuan menemukan layanan?</p>
+                            <div>
+                                <a href="#" class="btn btn-primary btn-sm"><i class="ri-customer-service-2-line me-1"></i> Buka Menu Bantuan</a>
+                            </div>
+                        </div>
+    
+<div id="search-list">
+                                <div class="card position-relative service-item" data-title="layanan peminjaman sarana & prasarana" data-unit="fakultas teknologi informasi dan sains data" data-synonyms="sarpras pinjam ruang sarana prasarana alat lab gedung fatisda">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-4">
+                                            <div class="avatar-sm">
+                                                <div class="avatar-title bg-light rounded"> <img
+                                                        src="https://eservice.uns.ac.id/assets/images/logo-uns.png"
+                                                        alt="" class="avatar-sm rounded companyLogo-img"> </div>
+                                            </div>
+                                            <div class="ms-3 flex-grow-1">
+                                                <a href="../UnitPage/fatisda/SarprasPage.html">
+                                                    <h5 class="">Layanan Peminjaman Sarana &amp; Prasarana</h5>
+                                                </a>
+                                                <p class="company-name text-muted mb-0">Fakultas Teknologi Informasi dan Sains Data
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">
+                                            <p>Pelayanan Peminjaman Sarana dan Prasarana FATISDA untuk kegiatan akademik dan kemahasiswaan.</p>
+                                        </div>
+                                        <div>
+                                            <span class="badge badge-soft-primary me-1">Sarana &amp; Prasarana</span>
+                                            <span class="badge badge-soft-success me-1">FATISDA</span>
+                                            <span class="badge badge-soft-secondary me-1">Mahasiswa</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer border-top-dashed">
+                                        <div class="d-flex justify-content-end flex-wrap gap-3">
+                                            <div>
+                                                <a href="../UnitPage/fatisda/FATISDAPage.html"
+                                                    class="btn btn-secondary">Lihat Unit</a>
+                                            </div>
+                                            <div>
+                                                <a href="../UnitPage/fatisda/SarprasPage.html"
+                                                    class="btn btn-primary">Lihat Layanan <i
+                                                        class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="card position-relative">
 
                                     <div class="card-body">
@@ -394,7 +453,7 @@
                                         </div>
                                         <div>
                                             <a data-pjax
-                                                href="https://eservice.uns.ac.id/id/site/search?filter%5Bid_layanan%5D=141"
+                                                href="../LayananPage/ITPage.html"
                                                 class="badge badge-soft-primary me-1">Layanan Website Portal Unit</a>
                                             <span class="badge badge-soft-secondary me-1">eService</span>
                                             <span class="badge badge-soft-secondary me-1">Dosen</span>
@@ -440,7 +499,7 @@
                                         </div>
                                         <div>
                                             <a data-pjax
-                                                href="https://eservice.uns.ac.id/id/site/search?filter%5Bid_layanan%5D=141"
+                                                href="../LayananPage/ITPage.html"
                                                 class="badge badge-soft-primary me-1">Layanan Website Portal Unit</a>
                                             <span class="badge badge-soft-secondary me-1">eService</span>
                                             <span class="badge badge-soft-secondary me-1">Dosen</span>
@@ -486,7 +545,7 @@
                                         </div>
                                         <div>
                                             <a data-pjax
-                                                href="https://eservice.uns.ac.id/id/site/search?filter%5Bid_layanan%5D=141"
+                                                href="../LayananPage/ITPage.html"
                                                 class="badge badge-soft-primary me-1">Layanan Website Portal Unit</a>
                                             <span class="badge badge-soft-secondary me-1">eService</span>
                                         </div>
@@ -853,7 +912,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card">
-                            <form action="https://eservice.uns.ac.id/id/site/search" id="filter" method="GET" data-pjax>
+                            <form action="SearchPage.html" id="filter" method="GET" data-pjax>
                                 <input type="submit" style="position: absolute; left: -9999px" />
                             </form>
                             <div class="card-body p-0 ">
@@ -1759,8 +1818,8 @@
                                 <h5 class="text-white mb-0">Portal Informasi</h5>
                                 <div class="text-muted mt-3">
                                     <ul class="list-unstyled footer-list fs-14">
-                                        <li><a href="/">FAQ</a></li>
-                                        <li><a href="/">Contact</a></li>
+                                        <li><a href="#faq-section" class="footer-faq-link">Pertanyaan Umum</a></li>
+                                        <li><a href="#contact-section" class="footer-contact-link">Kontak</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2788,7 +2847,7 @@
                             if (container && !container.querySelector('.offline-ticket-btn')) {
                                 container.insertAdjacentHTML('beforeend', `
                         <div class="text-center my-3 offline-ticket-btn">
-                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                            <a href="../LayananPage/LayananPage.html" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
                                 <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
                             </a>
                         </div>
@@ -3269,7 +3328,7 @@
                             if (container && !container.querySelector('.offline-ticket-btn')) {
                                 container.insertAdjacentHTML('beforeend', `
                         <div class="text-center my-3 offline-ticket-btn">
-                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                            <a href="../LayananPage/LayananPage.html" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
                                 <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
                             </a>
                         </div>
@@ -3437,6 +3496,272 @@
     <script src="https://eservice.uns.ac.id/js/push-register.js?v=1"></script>
 
 
+
+
+<!-- AUTOCOMPLETE & SINONIM SEARCH SCRIPT -->
+<style>
+.search-suggest-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 99999;
+    max-height: 380px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+.search-suggest-item {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: block;
+    color: #333 !important;
+    transition: background 0.15s ease;
+}
+.search-suggest-item:hover, .search-suggest-item.active {
+    background-color: #f0f7ff;
+}
+.search-suggest-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 2px;
+}
+.search-suggest-sub {
+    font-size: 11px;
+    color: #64748b;
+}
+.search-suggest-badge {
+    font-size: 10px;
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('global-search-input');
+    if (!searchInput) return;
+
+    var container = searchInput.closest('.input-group') || searchInput.parentElement;
+    container.style.position = 'relative';
+
+    var suggestBox = document.createElement('div');
+    suggestBox.className = 'search-suggest-box';
+    suggestBox.style.display = 'none';
+    container.appendChild(suggestBox);
+
+    var servicesData = [
+        {
+            title: "Layanan Peminjaman Sarana & Prasarana",
+            unit: "Fakultas Teknologi Informasi dan Sains Data (FATISDA)",
+            synonyms: ["sarpras", "pinjam", "ruang", "sarana", "prasarana", "alat", "lab", "gedung"],
+            url: "../UnitPage/fatisda/SarprasPage.html",
+            matchNote: "Cocok untuk kata kunci: sarpras, pinjam ruang"
+        },
+        {
+            title: "Layanan Akun Tamu untuk Internet Wireless",
+            unit: "Direktorat TIK",
+            synonyms: ["wifi", "wi-fi", "internet", "wireless", "jaringan", "hotspot"],
+            url: "../LayananPage/ITPage.html",
+            matchNote: "Cocok untuk kata kunci: wifi, internet"
+        },
+        {
+            title: "Layanan Pengisian KRS di Luar Jadwal",
+            unit: "Biro Akademik dan Kemahasiswaan",
+            synonyms: ["krs", "nilai", "jadwal", "akademik", "krsan"],
+            url: "../LayananPage/AkademikPage.html",
+            matchNote: "Kategori Akademik"
+        },
+        {
+            title: "Layanan Keringanan UKT Mahasiswa",
+            unit: "Bagian Non Akademik & Keuangan",
+            synonyms: ["ukt", "keringanan", "biaya", "kuliah", "keuangan", "cicilan"],
+            url: "../LayananPage/NonAkademikPage.html",
+            matchNote: "Kategori Non Akademik"
+        },
+        {
+            title: "Fakultas Teknologi Informasi dan Sains Data (FATISDA)",
+            unit: "Unit Kampus / Fakultas",
+            synonyms: ["fatisda", "informatika", "sains data"],
+            url: "../UnitPage/fatisda/FATISDAPage.html",
+            matchNote: "Unit Penyedia Layanan"
+        }
+    ];
+
+    function renderSuggestions(query) {
+        var q = query.trim().toLowerCase();
+        if (!q) {
+            suggestBox.style.display = 'none';
+            return;
+        }
+
+        var matches = servicesData.filter(function(item) {
+            if (item.title.toLowerCase().indexOf(q) !== -1) return true;
+            if (item.unit.toLowerCase().indexOf(q) !== -1) return true;
+            return item.synonyms.some(function(s) { return s.indexOf(q) !== -1 || q.indexOf(s) !== -1; });
+        });
+
+        if (matches.length === 0) {
+            suggestBox.innerHTML = '<div style="padding:12px; font-size:12px; color:#dc3545;">Tidak ada layanan yang cocok. <a href="SearchPage.html?q=' + encodeURIComponent(q) + '" class="text-primary fw-bold">Cari di halaman pencarian</a></div>';
+            suggestBox.style.display = 'block';
+            return;
+        }
+
+        var html = '';
+        matches.forEach(function(item) {
+            html += '<a href="' + item.url + '" class="search-suggest-item">' +
+                    '<div class="search-suggest-title"><i class="ri-file-text-line me-1"></i>' + item.title + '<span class="search-suggest-badge">Tersedia</span></div>' +
+                    '<div class="search-suggest-sub">' + item.unit + ' • <span class="text-primary fst-italic">' + item.matchNote + '</span></div>' +
+                    '</a>';
+        });
+
+        html += '<a href="SearchPage.html?q=' + encodeURIComponent(q) + '" class="search-suggest-item bg-light text-center py-2" style="font-size:11px; font-weight:600; color:#4a98be !important;">' +
+                '<i class="ri-search-eye-line me-1"></i> Lihat semua hasil pencarian untuk "' + query + '" &rarr;</a>';
+
+        suggestBox.innerHTML = html;
+        suggestBox.style.display = 'block';
+    }
+
+    searchInput.addEventListener('input', function(e) {
+        renderSuggestions(this.value);
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var val = this.value.trim();
+            if (val.toLowerCase() === 'sarpras' || val.toLowerCase() === 'pinjam ruang' || val.toLowerCase() === 'peminjaman') {
+                window.location.href = '../UnitPage/fatisda/SarprasPage.html';
+            } else {
+                window.location.href = 'SearchPage.html?q=' + encodeURIComponent(val);
+            }
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!container.contains(e.target)) {
+            suggestBox.style.display = 'none';
+        }
+    });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('searchLayanan');
+    var globalSearch = document.getElementById('global-search-input');
+    var searchList = document.getElementById('search-list');
+    var countLabel = document.getElementById('search-count-label');
+    var chipsContainer = document.getElementById('active-filter-chips');
+    var emptyState = document.getElementById('search-empty-state');
+
+    if (!searchList) return;
+    var cards = Array.from(searchList.querySelectorAll('.card'));
+
+    cards.forEach(function(c) {
+        if (!c.classList.contains('service-item')) {
+            c.classList.add('service-item');
+            var titleEl = c.querySelector('h5') || c.querySelector('h6');
+            var unitEl = c.querySelector('.company-name');
+            c.setAttribute('data-title', (titleEl ? titleEl.textContent : '').toLowerCase());
+            c.setAttribute('data-unit', (unitEl ? unitEl.textContent : '').toLowerCase());
+            var synonyms = '';
+            var text = c.textContent.toLowerCase();
+            if (text.indexOf('transkrip') !== -1) synonyms += ' transkrip nilai akademik';
+            if (text.indexOf('wireless') !== -1 || text.indexOf('internet') !== -1) synonyms += ' wifi wi-fi jaringan internet hotspot';
+            if (text.indexOf('zoom') !== -1) synonyms += ' zoom vicon rapat webinar';
+            if (text.indexOf('office') !== -1) synonyms += ' ms office 365 lisensi word excel';
+            if (text.indexOf('email') !== -1) synonyms += ' surat elektronik webmail';
+            c.setAttribute('data-synonyms', synonyms);
+        }
+    });
+
+    function filterServices(query) {
+        var q = (query || '').trim().toLowerCase();
+        var visibleCount = 0;
+
+        cards.forEach(function(card) {
+            var title = card.getAttribute('data-title') || '';
+            var unit = card.getAttribute('data-unit') || '';
+            var synonyms = card.getAttribute('data-synonyms') || '';
+
+            var match = false;
+            if (!q) {
+                match = true;
+            } else {
+                if (title.indexOf(q) !== -1 || unit.indexOf(q) !== -1 || synonyms.indexOf(q) !== -1) {
+                    match = true;
+                } else if (q.indexOf('sarpras') !== -1 || q.indexOf('pinjam') !== -1 || q.indexOf('ruang') !== -1) {
+                    if (title.indexOf('sarana') !== -1 || synonyms.indexOf('sarpras') !== -1) match = true;
+                } else if (q.indexOf('wifi') !== -1 || q.indexOf('internet') !== -1) {
+                    if (title.indexOf('wireless') !== -1 || synonyms.indexOf('wifi') !== -1) match = true;
+                }
+            }
+
+            if (match) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (countLabel) {
+            if (q) {
+                countLabel.innerHTML = 'Ditemukan <strong>' + visibleCount + '</strong> layanan untuk kata kunci "<span class="text-primary">' + query + '</span>"';
+            } else {
+                countLabel.innerHTML = 'Menampilkan <strong>' + visibleCount + '</strong> layanan tersedia';
+            }
+        }
+
+        if (chipsContainer) {
+            chipsContainer.innerHTML = '';
+            if (q) {
+                var chip = document.createElement('span');
+                chip.className = 'badge bg-soft-primary text-primary fs-12 px-2 py-1 d-inline-flex align-items-center gap-1';
+                chip.innerHTML = 'Kata kunci: "' + query + '" <i class="ri-close-line" style="cursor:pointer;" title="Hapus filter"></i>';
+                chip.querySelector('i').onclick = function() {
+                    if (searchInput) searchInput.value = '';
+                    if (globalSearch) globalSearch.value = '';
+                    filterServices('');
+                };
+                chipsContainer.appendChild(chip);
+            }
+        }
+
+        if (emptyState) {
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            filterServices(this.value);
+        });
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var qParam = params.get('q') || params.get('search');
+    if (qParam) {
+        if (searchInput) searchInput.value = qParam;
+        if (globalSearch) globalSearch.value = qParam;
+        filterServices(qParam);
+    }
+});
+</script>
 
 </body>
 
