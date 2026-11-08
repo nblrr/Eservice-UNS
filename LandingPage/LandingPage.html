@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>eService UNS - Home</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
@@ -54,6 +55,17 @@
     <link href="https://eservice.uns.ac.id/statics/css/site.css?v=4" rel="stylesheet" type="text/css" />
     <link href="https://eservice.uns.ac.id/statics/css/rekomendasi.css?v=1" rel="stylesheet" type="text/css" />
 
+
+    <!-- ICON PACKS (Offline Local + Online CDN Fallback with CORS) -->
+    <link href="../assets/css/remixicon.css" rel="stylesheet">
+    <link href="../assets/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -66,6 +78,12 @@
                         <strong>Informasi Jam Layanan ULT — Layanan Tatap Muka: 08.00–15.00 | Contact Center:
                             08.00–17.00</strong>
                     </div>
+                    <div class="ms-3 d-none d-md-flex align-items-center">
+  <div class="input-group input-group-sm" style="width:260px">
+    <input type="text" class="form-control" placeholder="Cari layanan..." id="global-search-input">
+    <a href="../Search/SearchPage.html" class="btn btn-light"><i class="ri-search-line"></i></a>
+  </div>
+</div>
                     <div class="flex-shrink-0 ms-auto">
                         <div class="hstack gap-3">
                             <a href="https://uns.ac.id" class="d-none d-sm-block">Situs Utama</a>
@@ -85,7 +103,7 @@
                 style="box-shadow: 0 1px 5px -2px rgba(56, 65, 74, 0.15); background-color:#fff; color:#000"
                 id="navbar">
                 <div class="container">
-                    <a class="navbar-brand" href="https://eservice.uns.ac.id/id/site">
+                    <a class="navbar-brand" href="LandingPage.html">
                         <img src="https://eservice.uns.ac.id/assets/images/logo-dark.png" class="card-logo" alt="logo"
                             height="34">
                     </a>
@@ -98,38 +116,19 @@
                         <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14 active"
-                                    href="https://eservice.uns.ac.id/id/site">Halaman Depan</a>
+                                    href="LandingPage.html">Beranda</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/layanan">Layanan</a>
+                                    href="../LayananPage/LayananPage.html">Layanan</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/unit">Unit</a>
-                            </li>
-                            <li class="nav-item">
-
-                                <a style="color: #000" class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/unit/pengaduan">Pengaduan</a>
+                                    href="#">Bantuan</a>
                             </li>
                             <li class="nav-item">
                                 <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/panduan">Panduan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/search">Pencarian</a>
-                            </li>
-                            <li class="nav-item">
-                                <a style="color: #000" data-pjax class="nav-link fs-14"
-                                    href="https://eservice.uns.ac.id/id/site/user/riwayat">Riwayat Saya</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" id="btn-aktifkan-notifikasi"
-                                    onclick="eservicePushEnable()" style="color: #000" class="nav-link fs-14">
-                                    <i class="ri-notification-3-line align-middle me-1"></i>Aktifkan Notifikasi
-                                </a>
+                                    href="../riwayat/RiwayatPage.html">Riwayat Saya</a>
                             </li>
                         </ul>
                         <div class="my-2 my-lg-0">
@@ -173,7 +172,7 @@
                                     data-live-chat-source="#rekomendasi-intent">
                                     <i class="ri-chat-smile-3-line" style="color:var(--kn-muted)"></i>Tanya asisten
                                 </button>
-                                <a href="https://eservice.uns.ac.id/id/site/search" class="kn-chip">
+                                <a href="../Search/SearchPage.html" class="kn-chip">
                                     <i class="ri-search-line" style="color:var(--kn-muted)"></i>Telusuri katalog layanan
                                 </a>
                             </div>
@@ -758,8 +757,8 @@
                                 <h5 class="text-white mb-0">Portal Informasi</h5>
                                 <div class="text-muted mt-3">
                                     <ul class="list-unstyled footer-list fs-14">
-                                        <li><a href="/">FAQ</a></li>
-                                        <li><a href="/">Contact</a></li>
+                                        <li><a href="#faq-section" class="footer-faq-link">Pertanyaan Umum</a></li>
+                                        <li><a href="#contact-section" class="footer-contact-link">Kontak</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1787,7 +1786,7 @@
                             if (container && !container.querySelector('.offline-ticket-btn')) {
                                 container.insertAdjacentHTML('beforeend', `
                         <div class="text-center my-3 offline-ticket-btn">
-                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                            <a href="../LayananPage/LayananPage.html" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
                                 <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
                             </a>
                         </div>
@@ -2261,7 +2260,7 @@
                             if (container && !container.querySelector('.offline-ticket-btn')) {
                                 container.insertAdjacentHTML('beforeend', `
                         <div class="text-center my-3 offline-ticket-btn">
-                            <a href="https://eservice.uns.ac.id/id/site/layanan" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
+                            <a href="../LayananPage/LayananPage.html" class="btn btn-sm text-white rounded-pill fs-11 py-1 px-3 shadow-xs" style="background: #0284c7;">
                                 <i class="mdi mdi-ticket-confirmation-outline me-1"></i> Ajukan Permohonan / Tiket Reguler
                             </a>
                         </div>
@@ -2512,6 +2511,163 @@
             initializeSwiper();
         });
     </script>
+
+
+<!-- AUTOCOMPLETE & SINONIM SEARCH SCRIPT -->
+<style>
+.search-suggest-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    z-index: 99999;
+    max-height: 380px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+.search-suggest-item {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: block;
+    color: #333 !important;
+    transition: background 0.15s ease;
+}
+.search-suggest-item:hover, .search-suggest-item.active {
+    background-color: #f0f7ff;
+}
+.search-suggest-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 2px;
+}
+.search-suggest-sub {
+    font-size: 11px;
+    color: #64748b;
+}
+.search-suggest-badge {
+    font-size: 10px;
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('global-search-input');
+    if (!searchInput) return;
+
+    var container = searchInput.closest('.input-group') || searchInput.parentElement;
+    container.style.position = 'relative';
+
+    var suggestBox = document.createElement('div');
+    suggestBox.className = 'search-suggest-box';
+    suggestBox.style.display = 'none';
+    container.appendChild(suggestBox);
+
+    var servicesData = [
+        {
+            title: "Layanan Peminjaman Sarana & Prasarana",
+            unit: "Fakultas Teknologi Informasi dan Sains Data (FATISDA)",
+            synonyms: ["sarpras", "pinjam", "ruang", "sarana", "prasarana", "alat", "lab", "gedung"],
+            url: "../UnitPage/fatisda/SarprasPage.html",
+            matchNote: "Cocok untuk kata kunci: sarpras, pinjam ruang"
+        },
+        {
+            title: "Layanan Akun Tamu untuk Internet Wireless",
+            unit: "Direktorat TIK",
+            synonyms: ["wifi", "wi-fi", "internet", "wireless", "jaringan", "hotspot"],
+            url: "../LayananPage/ITPage.html",
+            matchNote: "Cocok untuk kata kunci: wifi, internet"
+        },
+        {
+            title: "Layanan Pengisian KRS di Luar Jadwal",
+            unit: "Biro Akademik dan Kemahasiswaan",
+            synonyms: ["krs", "nilai", "jadwal", "akademik", "krsan"],
+            url: "../LayananPage/AkademikPage.html",
+            matchNote: "Kategori Akademik"
+        },
+        {
+            title: "Layanan Keringanan UKT Mahasiswa",
+            unit: "Bagian Non Akademik & Keuangan",
+            synonyms: ["ukt", "keringanan", "biaya", "kuliah", "keuangan", "cicilan"],
+            url: "../LayananPage/NonAkademikPage.html",
+            matchNote: "Kategori Non Akademik"
+        },
+        {
+            title: "Fakultas Teknologi Informasi dan Sains Data (FATISDA)",
+            unit: "Unit Kampus / Fakultas",
+            synonyms: ["fatisda", "informatika", "sains data"],
+            url: "../UnitPage/fatisda/FATISDAPage.html",
+            matchNote: "Unit Penyedia Layanan"
+        }
+    ];
+
+    function renderSuggestions(query) {
+        var q = query.trim().toLowerCase();
+        if (!q) {
+            suggestBox.style.display = 'none';
+            return;
+        }
+
+        var matches = servicesData.filter(function(item) {
+            if (item.title.toLowerCase().indexOf(q) !== -1) return true;
+            if (item.unit.toLowerCase().indexOf(q) !== -1) return true;
+            return item.synonyms.some(function(s) { return s.indexOf(q) !== -1 || q.indexOf(s) !== -1; });
+        });
+
+        if (matches.length === 0) {
+            suggestBox.innerHTML = '<div style="padding:12px; font-size:12px; color:#dc3545;">Tidak ada layanan yang cocok. <a href="../Search/SearchPage.html?q=' + encodeURIComponent(q) + '" class="text-primary fw-bold">Cari di halaman pencarian</a></div>';
+            suggestBox.style.display = 'block';
+            return;
+        }
+
+        var html = '';
+        matches.forEach(function(item) {
+            html += '<a href="' + item.url + '" class="search-suggest-item">' +
+                    '<div class="search-suggest-title"><i class="ri-file-text-line me-1"></i>' + item.title + '<span class="search-suggest-badge">Tersedia</span></div>' +
+                    '<div class="search-suggest-sub">' + item.unit + ' • <span class="text-primary fst-italic">' + item.matchNote + '</span></div>' +
+                    '</a>';
+        });
+
+        html += '<a href="../Search/SearchPage.html?q=' + encodeURIComponent(q) + '" class="search-suggest-item bg-light text-center py-2" style="font-size:11px; font-weight:600; color:#4a98be !important;">' +
+                '<i class="ri-search-eye-line me-1"></i> Lihat semua hasil pencarian untuk "' + query + '" &rarr;</a>';
+
+        suggestBox.innerHTML = html;
+        suggestBox.style.display = 'block';
+    }
+
+    searchInput.addEventListener('input', function(e) {
+        renderSuggestions(this.value);
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var val = this.value.trim();
+            if (val.toLowerCase() === 'sarpras' || val.toLowerCase() === 'pinjam ruang' || val.toLowerCase() === 'peminjaman') {
+                window.location.href = '../UnitPage/fatisda/SarprasPage.html';
+            } else {
+                window.location.href = '../Search/SearchPage.html?q=' + encodeURIComponent(val);
+            }
+        }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!container.contains(e.target)) {
+            suggestBox.style.display = 'none';
+        }
+    });
+});
+</script>
 
 </body>
 
